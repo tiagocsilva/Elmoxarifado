@@ -1,6 +1,7 @@
 body {
 	margin: 0px;
-	background: url("../img/fundo.png");
+	background: #F0F0F0;
+	font-family: 'Droid Sans', sans-serif;
 }
 
 .main {
@@ -13,8 +14,68 @@ body {
 }
 
 .box-login {
-	background: #414141;
+	background: #FFF;
 	width: 50%;
 	text-align: center;
-	color: #FFF;
+	color: #333;
+	padding: 50px;
+	border-radius: 15px;
+	border: solid 1px #E3E3E3;
+	box-shadow: 2px 2px 2px #E3E3E3;
+}
+
+.box-login span {
+	display: block;
+}
+
+.login-header {
+	margin-top: 15px;
+}
+
+.elmo-title {
+	font-weight: bold;	
+	font-size: 20px;
+}
+
+.elmo-slogan {
+	font-size: 12px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.login-row {
+	padding: 5px;
+}
+
+.login-row input{
+	background: transparent;
+	border: none;
+	border-bottom: solid 1px #CDCDCD;
+	font-size: 14px;
+	padding: 5px;
+	width: 90%;
+	color: #333;
+}
+
+.login-row input:focus {
+	outline: none;
+	transition: all 0.4s;
+	border-bottom-color: #5E5E5E;
+}
+
+.login-buttons button {
+	width: 200px;
+	height: 40px;
+	background: #444;
+	color: #fff;
+	border-radius: 100px;
+	border: none;
+	font-weight: bold;
+	cursor: pointer;
+	margin: 30px;
+}
+
+.login-buttons button:hover {
+	background: #222;
+	transition: all 0.2s;
 }
