@@ -138,15 +138,3 @@ body {
    font-weight: bold;
    padding-left: 30px;
 }
-
-.menu-footer {
-   height: 20px;
-   width: 95%;
-   display: flex;
-   justify-content: flex-end;
-   align-items: center;
-   font-size: 12px;
-   color: #333;
-   opacity: 0.5;
-   font-weight: bold;
-}

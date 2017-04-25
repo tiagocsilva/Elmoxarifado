@@ -1,0 +1,173 @@
+<div>
+  <h1><i class="fa fa-plus" aria-hidden="true"></i> Novo Usuário</h1>
+  <div class="control"> 
+    
+    <div class="control-left">
+        Nome:
+    </div>
+    <div class="control-right">
+        <input>
+    </div>
+    
+  </div>
+
+  <div class="control"> 
+    
+    <div class="control-left">
+        Nascimento:
+    </div>
+    <div class="control-right">
+        <input>
+    </div>
+    
+  </div>
+
+  <div class="control"> 
+    
+    <div class="control-left">
+        Telefone:
+    </div>
+    <div class="control-right">
+        <input>
+    </div>
+    
+  </div>
+
+  <div class="control"> 
+    
+    <div class="control-left">
+        Nome:
+    </div>
+    <div class="control-right">
+        <input>
+    </div>
+    
+  </div>
+
+   
+Usuário Comum
+    <label class="switch">
+        
+        <input type="checkbox">
+        
+        <div class="slider round"></div>
+    </label>
+
+Gerente
+    <br>
+    <button>Salvar</button>
+
+</div>
+
+<style>
+    input {
+        width: 300px;
+        margin: 5px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: solid 1px #cdcdcd;
+        color: #555;
+    }
+    
+    button {
+        padding: 10px 50px 10px 50px;
+        border-radius: 5px;
+        border: solid 1px #999;
+        cursor: pointer;
+        font-weight: bold;
+        color: #555;
+    }
+
+
+    .control {
+      display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+
+    .control-left 
+    {
+      width: 100px;
+      text-align: right;
+      padding-right: 10px;
+        //border: solid 1px #000;
+        //height: 100%;
+        //float: left;
+        //display: flex;
+       // align-items: center;
+        //justify-content: center;
+    }
+
+    .control-right 
+    {
+        //float: right;
+    }
+
+
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #333;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #333;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+</style>
+
+
+
+<!--TIPO DE USUARIO COMUM/GERENTE TOOLTIP-->
+<!--PICKER DATE-->
+<!--CAMPOS ESTILO FORM LOGIN-->
+<!--LINK IN LOGO-->
