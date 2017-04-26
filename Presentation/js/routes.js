@@ -1,4 +1,4 @@
-var app = angular.module("elmoapp", ["ngRoute"]);
+var app = angular.module("elmoapp", ["ngRoute","ngAnimate"]);
 
 app.config(function($routeProvider) {
     $routeProvider
@@ -7,5 +7,6 @@ app.config(function($routeProvider) {
     })
     .when("/administracao/usuarios/novo", {
         templateUrl : "administracao/usuarios/novo.html"
-    });
+    }).
+    otherwise({redirectTo: "/administracao"});
 });
