@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;   
+}
+
 body {
 	margin: 0px;
 	background: #F0F0F0;
@@ -5,13 +9,16 @@ body {
 	color: #333;
 }
 
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 .main {
-	position: absolute;
-	display: flex;
-	width: 100%;
-	height: 100%;
-	justify-content: center;
-	align-items: center;
+    margin: auto;
+    width: 95%;
 }
 
 .box-login {
@@ -107,21 +114,8 @@ body {
 .menu-header {
 	display: flex;
 	justify-content: center;
+    margin-top: 60px;
 	margin-bottom: 40px;
-}
-
-.menu-item {
-	border: solid 1px;
-	display: block;
-	text-align: center;
-	background: #FFF;
-	text-decoration: none;
-	color: #5A5A5A;
-	border: solid 1px rgba(0,0,0,0.2);
-	border-radius:3px;
-	width: 115px;
-	padding: 8px;
-	margin: 8px;
 }
 
 .menu-header-title {
@@ -138,47 +132,52 @@ body {
    font-weight: bold;
    padding-left: 30px;
 }
+/*Adminisracao Page Styles*/
+.dropbtn {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #555;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    border-color: #888;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 4px;
+}
+.dropdown-content {
+    display: none;
+    font-size: 13px;
+    border-radius: 5px;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: #555;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown:hover .dropbtn {
+    transition: all 0.2s;
+    background-color: rgba(0, 0, 0, 0.2);
+}
 
 /*Novo Usuário Styles*/
  .usuarios-control {
      text-align: center;
- }
- .page-title {
-     font-size: 16px;
-     margin-bottom: 35px;
-     opacity: 0.6;
- }
- .input-control {
-     width: 300px;
-     margin: 5px;
-     padding: 8px;
-     font-size: 14px;
-     border: none;
-     border-bottom: solid 1px #cdcdcd;
-     color: #777;
-     background: transparent;
- }
- .input-control:focus {
-     outline: none;
-     transition: all 0.4s;
-     border-bottom-color: #888;
- }
- .input-control::placeholder {
-     opacity: 0.4;
- }
- .control {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     margin: 5px;
- }
- .control-left {
-     width: 100px;
-     text-align: right;
-     padding-right: 10px;
-     color: #777;
-     font-size: 14px;
-     font-weight: bold;
  }
  .switch-main {
  	width: 310px; 
@@ -232,38 +231,65 @@ body {
  .slider.round:before {
      border-radius: 50%;
  }
- .control-form-user-button {
+ .control-form-button {
     width: 100%;
     margin-top: 50px;
     margin-left: 30px;
 }
-.control-form-user-button button {
-    background: rgba(0, 0, 0, 0.02);
-    padding: 8px 30px 8px 30px;
-    border-radius: 5px;
-    border: solid 1px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    font-weight: bold;
-    color: #888;
-    margin: 0px 50px 0px 50px;
+
+/*Ferramentas Page Styles*/
+.ferramentas-control {
     text-align: center;
 }
-.control-form-user-button button:hover {
+
+.input-file {
+    padding: 10px;
+    color: #888;
+}
+.input-file::-webkit-file-upload-button {
+    border: solid 1px #cdcdcd;
+    padding: 4px;
+    color: #999;
+    border-radius: 1px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.04);
+}
+.input-file::-webkit-file-upload-button:hover {
+    transition: all 0.3s;
+    background: rgba(0, 0, 0, 0.07);
+}
+
+/*Sobre Page Styles*/
+.box-sobre {
+    width: 80%;
+    border: solid 1px #D4D4D4;
+    background: #FFF;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #D4D4D4;
+    color: #888;
+}
+.box-sobre h1 {
+    text-align: center;
+    margin: 10px;
+    font-size: 18px;
+}
+.box-sobre p {
+    text-indent: 1.5em;
+    line-height: 1.5em;
+    text-align: justify;
+}
+.box-sobre a {
+    display: block;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #888;
+    font-weight: bold;
+    text-indent: 0.5em;
+}
+.box-sobre a:hover {
     transition: all 0.3s;
     color: #555;
-    background: rgba(0, 0, 0, 0.1);
-}
-.control-form-user-button button span {
-    display: flex;
-    align-items: center;
-}
-.control-form-user-button button i {
-    //font-size: 20px;
-    padding-right: 5px;
-}
-.control-form-user-button button:nth-child(1) i {
-    padding-left: 5px;
-}
-.control-form-user-button button:nth-child(2) i {
-    padding-right: 5px;
 }
