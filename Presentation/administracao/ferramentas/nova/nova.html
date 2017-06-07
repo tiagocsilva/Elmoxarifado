@@ -1,0 +1,71 @@
+<div class="ferramentas-control">
+
+  <h1 class="page-title"><i class="fa fa-plus" aria-hidden="true"></i> Nova Ferramenta</h1>
+  
+  <div class="control">   
+    <div class="control-left">
+        Descrição*:
+    </div>
+      <div class="control-right">
+        <input type="text" placeholder="ex: Alicate de Corte" class="input-control" ng-model="descricao" required> 
+    </div>
+  </div>
+
+   <div class="control">   
+    <div class="control-left">
+        Fabricante*:
+    </div>
+      <div class="control-right">
+        <input type="text" placeholder="ex: Fabrics" class="input-control" ng-model="fabricante" required>
+    </div>
+  </div>
+
+   <div class="control">   
+    <div class="control-left">
+        Valor*:
+    </div>
+      <div class="control-right">
+        <input type="text" placeholder="ex: 999,99" class="input-control" ng-model="valor" required>
+    </div>
+  </div>
+
+  <!--<div class="control">   
+    <div class="control-left">
+        Descrição:
+    </div>
+    <div class="control-right">
+        <textarea placeholder="Digite aqui" rows="10" class="input-control"></textarea>
+    </div>
+  </div>-->
+
+  <!--<div class="control">   
+    <div class="control-left">
+        Quantidade:
+    </div>
+    <div class="control-right">
+        <input type="number" class="input-control">
+    </div>
+  </div>-->
+
+  <!--<div class="control">   
+    <div class="control-left">
+        Foto:
+    </div>
+    <div class="control-right">
+        <input value="haha" type="file" class="input-control input-file">
+    </div>
+  </div>
+  -->
+  <div class="control-form-button">
+      <a href="#!/administracao"><button><span><i class="fa fa-ban" aria-hidden="true"></i>Cancelar</span></button></a>
+
+     <button ng-click="salvar()"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</span></button>
+  </div>
+
+</div>
+
+</div>
+
+<!-- LIMPAR FOTO
+NAO PERMITIR ESTOQUE NEGATIVO
+DIMINUIR CAMPO ESTOQUE -->
