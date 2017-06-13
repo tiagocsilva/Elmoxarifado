@@ -9,7 +9,7 @@ app.config(function($routeProvider) {
     })
     .when("/administracao/funcionarios/gerenciar", {
         templateUrl : "administracao/funcionarios/gerenciar/gerenciar.html",
-        controller: "gerenciarfuncionariosController"        
+        controller: "gerenciarFuncionariosController"        
     })
     .when("/administracao/funcionarios/gerenciar/editar/:matricula", {
         templateUrl : "administracao/funcionarios/gerenciar/editar/editar.html",
