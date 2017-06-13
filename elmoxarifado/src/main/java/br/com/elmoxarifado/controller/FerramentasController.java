@@ -34,6 +34,11 @@ public class FerramentasController {
         return new ResponseEntity<>(ferramentaService.buscar(), HttpStatus.OK);
     }
     
+    @RequestMapping(method=RequestMethod.GET, value="/buscarDisponiveis")
+    public ResponseEntity<Collection> buscarDisponiveis() {
+        return new ResponseEntity<>(ferramentaService.buscarDisponiveis(), HttpStatus.OK);
+    }
+    
     @RequestMapping(method=RequestMethod.GET, value="/buscar/{codFerramenta}")
     public ResponseEntity<Ferramenta> buscar(@PathVariable int codFerramenta) {
         return new ResponseEntity<>(ferramentaService.buscar(codFerramenta), HttpStatus.OK);

@@ -1,9 +1,9 @@
-app.controller("gerenciarFerramentasController",function($scope, $http) {
+app.controller("gerenciarFerramentasController",function(apiUrl, $scope, $http) {
 
     $scope.ferramentas = [];
 
-    function buscarFerramentas() {
-        $http.get("http://localhost:8080/ferramentas/buscar").then(function(ferramentas) {
+    function buscarFerramentas() {        
+        $http.get(apiUrl + "/ferramentas/buscar").then(function(ferramentas) {
             $scope.ferramentas = ferramentas.data;
         });
     }

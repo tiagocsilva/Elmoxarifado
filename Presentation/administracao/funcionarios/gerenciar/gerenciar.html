@@ -1,0 +1,34 @@
+<div class="gerenciar-usuarios">
+	
+    <a href="#!/administracao"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Voltar ao Menu</a>
+	<h1 class="page-title"><i class="fa fa-cog" aria-hidden="true"></i> Gerenciar Funcioanrios</h1>
+
+    <div class="usuarios-container"> 
+        <a ng-repeat="usuario in usuarios" href="#!/administracao/usuarios/gerenciar/editar/{{usuario.matricula}}"><div class="usuario">#{{usuario.matricula}} - {{usuario.nome}} - {{usuario.setor}} - {{usuario.ramal}}</div></a>
+    </div>
+	
+</div>
+
+<style type="text/css">
+    .usuario {        
+        color: rgba(0,0,0,0.7);
+        margin: 10px;
+        background: #FFF;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 2px 2px 2px #cdcdcd;
+        cursor: pointer;
+        width: 45%;
+        float: left;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .usuario:hover {
+        box-shadow: 8px 8px 8px #cdcdcd;
+    }
+
+    .gerenciar-usuarios a{
+        color: #999;
+    }
+</style>

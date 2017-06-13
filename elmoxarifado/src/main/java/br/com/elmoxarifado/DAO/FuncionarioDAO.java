@@ -11,33 +11,38 @@ import javax.swing.JOptionPane;
 
 public class FuncionarioDAO {
     
+    private static FuncionarioDAO funcionarioDAO;
+    public static FuncionarioDAO getInstance() {
+        if(funcionarioDAO == null)
+            funcionarioDAO = new FuncionarioDAO();
+        return funcionarioDAO;
+    }
+    
+    private FuncionarioDAO() {}
+    
     public void cadastrar(Funcionario func, String senha) {
         Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stm = null;  
-        ResultSet rs;
+        PreparedStatement stm = null;          
         try {
-            stm = con.prepareStatement("INSERT INTO USUARIO (LOGIN,SENHA,E_MAIL) VALUES(?,?,?) RETURNING id_user");
-            stm.setString(1, func.getLogin());
-            stm.setString(2, senha);
-            stm.setString(3, func.getEmail());            
-            
-            rs = stm.executeQuery();
-            rs.next();
-            int idUser = rs.getInt(1);
-            
-            stm.clearParameters();
-            
-            stm = con.prepareStatement("INSERT INTO FUNCIONARIO (MATRICULA,NOME,SETOR,RAMAL,ID_USUARIO) VALUES(?,?,?,?,?)");
+            stm = con.prepareStatement("INSERT INTO FUNCIONARIO (MATRICULA,NOME,SETOR,RAMAL) VALUES(?,?,?,?)");
             stm.setInt(1, func.getMatricula());
             stm.setString(2, func.getNome());
             stm.setString(3, func.getSetor());
-            stm.setString(4, func.getRamal());
-            stm.setInt(5, idUser);
-            stm.executeUpdate();
+            stm.setString(4, func.getRamal());           
+            stm.executeUpdate();           
             
-            ConnectionFactory.closeConnection(con, stm, rs);
+            stm.clearParameters();
+            
+            stm = con.prepareStatement("INSERT INTO USUARIO (LOGIN,SENHA,E_MAIL,COD_FUNC) VALUES(?,?,?,?)");
+            stm.setString(1, func.getLogin());
+            stm.setString(2, senha);
+            stm.setString(3, func.getEmail());     
+            stm.setInt(4, func.getMatricula());
+            stm.executeUpdate();   
+            
+            ConnectionFactory.closeConnection(con, stm);
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao salvar!!" + ex);
+            throw new RuntimeException(ex.getMessage(), ex);          
         } finally {
             ConnectionFactory.closeConnection(con, stm);
         }
@@ -50,7 +55,7 @@ public class FuncionarioDAO {
         List<Funcionario> funcionarios = new ArrayList<>();
         Funcionario func = null;
         try {
-            stm = con.prepareStatement("SELECT * FROM Funcionario f, Usuario u where f.id_usuario = u.id_user");
+            stm = con.prepareStatement("SELECT * FROM Funcionario f, Usuario u where f.matricula = u.cod_func");
             rs = stm.executeQuery();
             while (rs.next()) {
                 func = new Funcionario();
@@ -76,7 +81,7 @@ public class FuncionarioDAO {
         ResultSet rs = null;        
         Funcionario funcionario = new Funcionario();
         try {
-            stm = con.prepareStatement("SELECT * FROM Funcionario f, Usuario u where f.id_usuario = u.id_user and matricula = ?");
+            stm = con.prepareStatement("SELECT * FROM Funcionario f, Usuario u where f.matricula = u.cod_func and matricula = ?");
             stm.setInt(1, matricula);
             rs = stm.executeQuery();
             rs.next();
@@ -120,10 +125,10 @@ public class FuncionarioDAO {
         PreparedStatement stm = null;          
         
         try {
-            stm = con.prepareStatement("SELECT CHANGEPASSWORD(?,?)");
-            stm.setInt(1, funcionario.getMatricula());                                               
-            stm.setString(2, novaSenha);                                               
-            stm.executeQuery();          
+            stm = con.prepareStatement("UPDATE USUARIO SET senha = ? WHERE cod_func = ?");
+            stm.setString(1, novaSenha);                                               
+            stm.setInt(2, funcionario.getMatricula());                                              
+            stm.executeUpdate();          
          
             ConnectionFactory.closeConnection(con, stm);            
                

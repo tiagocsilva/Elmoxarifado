@@ -6,34 +6,37 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 	<!-- My CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/sweetalert.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/sweetalert-themes/google/google.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/common.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<meta charset="UTF-8">
 </head>
 <body>
-	<section class="main">
-		<div class="box-login">
-			<div class="login-header">
-				<span class="elmo-title"><i class="fa fa-eercast" aria-hidden="true"></i> ELMO</span>				
-				<span class="elmo-slogan">Sistema de Almoxarifado</span>
-			</div>
-
-			<div class="login-row">
-				<i class="fa fa-user" aria-hidden="true"></i>
-				<input type="text" name="user" placeholder="Usuário" required>
-			</div>
-
-			<div class="login-row">
-				<i class="fa fa-lock" aria-hidden="true"></i>
-				<input type="password" name="password" placeholder="Senha" required>
-			</div>
-
-			<div class="login-buttons">
-				<button>Entrar</button>
-			</div>
-		</div>
+	<body ng-app="elmoapp">
+	<header class="menu-header-title">
+		Elmoxarifado
+	</header>
+	<section class="main-container">
+		<div class="main view" ng-view></div>
 	</section>
 </body>
 </html>
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/angular-route.min.js"></script>
+<script type="text/javascript" src="js/angular-animate.min.js"></script> 
+<script type="text/javascript" src="js/sweetalert.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/routes.js"></script>
+
+<!-- Controllers -->
+<script type="text/javascript" src="administracao/funcionarios/novo/novoFuncionarioController.js"></script>
+<script type="text/javascript" src="administracao/funcionarios/gerenciar/gerenciarFuncionariosController.js"></script>
+<script type="text/javascript" src="administracao/funcionarios/gerenciar/editar/editarFuncionarioController.js"></script>
+<script type="text/javascript" src="administracao/ferramentas/nova/novaFerramentaController.js"></script>
+<script type="text/javascript" src="administracao/ferramentas/gerenciar/gerenciarFerramentasController.js"></script>
+<script type="text/javascript" src="administracao/ferramentas/gerenciar/editar/editarFerramentaController.js"></script>
+<script type="text/javascript" src="administracao/emprestimos/novo/novoEmprestimoController.js"></script>
+<script type="text/javascript" src="administracao/emprestimos/gerenciar/gerenciarEmprestimosController.js"></script>

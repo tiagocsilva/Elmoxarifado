@@ -1,0 +1,9 @@
+<div class="gerenciar-emprestimos">
+	
+    <a href="#!/administracao"><i class="fa fa-angle-double-left" aria-hidden="true"></i> Voltar ao Menu</a>
+	<h1 class="page-title"><i class="fa fa-cog" aria-hidden="true"></i> Gerenciar Emprestimos</h1>
+
+    <div class="emprestimos-container"> 
+        <a ng-repeat="emprestimo in emprestimos" ng-click="devolver(emprestimo.ferramentaId)"><div class="emprestimo">#{{emprestimo.matriculaFuncionario}} - {{emprestimo.inicio | date:'dd/MM/yyyy'}} - {{emprestimo.validade | date:'dd/MM/yyyy'}} - {{emprestimo.ferramentaId}}</div></a>
+    </div>
+</div>

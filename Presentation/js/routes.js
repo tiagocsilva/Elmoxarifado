@@ -1,21 +1,19 @@
-var app = angular.module("elmoapp", ["ngRoute","ngAnimate"]);
-
 app.config(function($routeProvider) {
-    $routeProvider
+    $routeProvider    
     .when("/administracao", {
         templateUrl : "administracao/administracao.html"        
     })
-    .when("/administracao/usuarios/novo", {
-        templateUrl : "administracao/usuarios/novo/novo.html",
-        controller: "novoUsuarioController"
+    .when("/administracao/funcionarios/novo", {
+        templateUrl : "administracao/funcionarios/novo/novo.html",
+        controller: "novoFuncionarioController"
     })
-    .when("/administracao/usuarios/gerenciar", {
-        templateUrl : "administracao/usuarios/gerenciar/gerenciar.html",
-        controller: "gerenciarUsuariosController"        
+    .when("/administracao/funcionarios/gerenciar", {
+        templateUrl : "administracao/funcionarios/gerenciar/gerenciar.html",
+        controller: "gerenciarfuncionariosController"        
     })
-    .when("/administracao/usuarios/gerenciar/editar/:matricula", {
-        templateUrl : "administracao/usuarios/gerenciar/editar/editar.html",
-        controller: "editarUsuarioController"
+    .when("/administracao/funcionarios/gerenciar/editar/:matricula", {
+        templateUrl : "administracao/funcionarios/gerenciar/editar/editar.html",
+        controller: "editarFuncionarioController"
     })
     .when("/administracao/ferramentas/nova", {
         templateUrl : "administracao/ferramentas/nova/nova.html",
@@ -28,6 +26,14 @@ app.config(function($routeProvider) {
     .when("/administracao/ferramentas/gerenciar/editar/:id", {
         templateUrl : "administracao/ferramentas/gerenciar/editar/editar.html",
         controller: "editarFerramentaController"
+    })
+    .when("/administracao/emprestimos/novo", {
+        templateUrl : "administracao/emprestimos/novo/novo.html",
+        controller: "novoEmprestimoController"
+    })
+    .when("/administracao/emprestimos/gerenciar", {
+        templateUrl : "administracao/emprestimos/gerenciar/gerenciar.html",
+        controller: "gerenciarEmprestimosController"
     })
     .when("/administracao/sobre", {
         templateUrl : "administracao/sobre/sobre.html"

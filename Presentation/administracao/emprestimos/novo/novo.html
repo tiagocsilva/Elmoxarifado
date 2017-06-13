@@ -1,0 +1,53 @@
+<div class="ferramentas-control">
+
+  <h1 class="page-title"><i class="fa fa-plus" aria-hidden="true"></i> Nova Ferramenta</h1>
+  
+  <div class="control">   
+    <div class="control-left">
+        Funcionario*:
+    </div>
+      <div class="control-right">        
+        <select class="input-control" ng-model="matriculaFuncionario">          
+          <option ng-repeat="funcionario in funcionarios" ng-value="funcionario.matricula">{{funcionario.nome}} #{{funcionario.matricula}}</option>          
+        </select>
+    </div>
+  </div>
+
+   <div class="control">   
+    <div class="control-left">
+        Ferramenta*:
+    </div>
+      <div class="control-right">        
+        <select class="input-control" ng-model="idFerramenta">          
+          <option ng-repeat="ferramenta in ferramentas" ng-value="ferramenta.codigo">{{ferramenta.descricao}}</option>          
+        </select>
+    </div>
+  </div>
+
+   <div class="control">   
+    <div class="control-left">
+        Inicio*:
+    </div>
+      <div class="control-right">
+        <input type="text" placeholder="99/99/9999" class="input-control" ng-model="inicio" required>
+    </div>
+  </div>
+
+  <div class="control">   
+    <div class="control-left">
+        Validade*:
+    </div>
+      <div class="control-right">
+        <input type="text" placeholder="99/99/9999" class="input-control" ng-model="validade" required>
+    </div>
+  </div>
+  
+  <div class="control-form-button">
+      <a href="#!/administracao"><button><span><i class="fa fa-ban" aria-hidden="true"></i>Cancelar</span></button></a>
+
+     <button ng-click="salvar()"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar Empréstimo</span></button>
+  </div>
+
+</div>
+
+</div>

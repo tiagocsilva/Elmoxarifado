@@ -90,3 +90,55 @@
 .control-form-button button:nth-child(2) i {
     padding-right: 5px;
 }
+
+
+
+
+
+
+/*FAST STYTLES*/
+
+    .emprestimo {        
+        color: rgba(0,0,0,0.7);
+        margin: 10px;
+        background: #FFF;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 2px 2px 2px #cdcdcd;
+        cursor: pointer;
+        width: 45%;
+        float: left;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .emprestimo:hover {
+        box-shadow: 8px 8px 8px #cdcdcd;
+    }
+
+    .gerenciar-emprestimos a{
+        color: #999;
+    }
+
+
+        .ferramenta {        
+        color: rgba(0,0,0,0.7);
+        margin: 10px;
+        background: #FFF;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 2px 2px 2px #cdcdcd;
+        cursor: pointer;
+        width: 45%;
+        float: left;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .ferramenta:hover {
+        box-shadow: 8px 8px 8px #cdcdcd;
+    }
+
+    .gerenciar-ferramentas a{
+        color: #999;
+    }

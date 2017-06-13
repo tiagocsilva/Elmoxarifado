@@ -1,7 +1,6 @@
 package br.com.elmoxarifado.service;
 
 import br.com.elmoxarifado.DAO.FuncionarioDAO;
-import br.com.elmoxarifado.model.Ferramenta;
 import br.com.elmoxarifado.model.Funcionario;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -12,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class FuncionarioService {    
     
-    FuncionarioDAO funcionarioDAO = new FuncionarioDAO();
+    FuncionarioDAO funcionarioDAO = FuncionarioDAO.getInstance();
 
     public String cadastrar(Funcionario funcionario) {
         DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy");

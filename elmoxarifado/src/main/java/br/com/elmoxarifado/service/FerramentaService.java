@@ -1,6 +1,7 @@
 package br.com.elmoxarifado.service;
 
 import br.com.elmoxarifado.DAO.FerramentaDAO;
+import br.com.elmoxarifado.model.Emprestimo;
 import br.com.elmoxarifado.model.Ferramenta;
 import java.util.List;
 import org.springframework.stereotype.Service;
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class FerramentaService {    
     
-    FerramentaDAO ferramentaDAO = new FerramentaDAO();
+    FerramentaDAO ferramentaDAO = FerramentaDAO.getInstance();
 
     public int cadastrar(Ferramenta ferramenta) {               
         ferramenta.codigo = ferramentaDAO.cadastrar(ferramenta);
@@ -17,6 +18,10 @@ public class FerramentaService {
     
     public List<Ferramenta> buscar() {                       
         return ferramentaDAO.buscar();
+    }
+    
+    public List<Emprestimo> buscarDisponiveis() {               
+        return ferramentaDAO.buscarDisponiveis();
     }
     
     public Ferramenta buscar(int codFerramenta) {                       

@@ -11,6 +11,15 @@ import javax.swing.JOptionPane;
 
 public class FerramentaDAO {
     
+    private static FerramentaDAO ferramentaDAO;
+    public static FerramentaDAO getInstance() {
+        if(ferramentaDAO == null)
+            ferramentaDAO = new FerramentaDAO();
+        return ferramentaDAO;
+    }
+    
+    private FerramentaDAO() {}
+    
     public int cadastrar(Ferramenta ferramenta) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stm = null;  
@@ -44,6 +53,31 @@ public class FerramentaDAO {
         Ferramenta ferramenta = null;
         try {
             stm = con.prepareStatement("SELECT * FROM Ferramenta");
+            rs = stm.executeQuery();
+            while (rs.next()) {
+                ferramenta = new Ferramenta();
+                ferramenta.setCodigo(rs.getInt("codigo"));
+                ferramenta.setDescricao(rs.getString("descricao"));
+                ferramenta.setFabricante(rs.getString("fabricante"));
+                ferramenta.setValor(rs.getDouble("valor"));             
+                ferramentas.add(ferramenta);
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao ler do SGBD!!" + ex);
+        } finally {
+            ConnectionFactory.closeConnection(con, stm, rs);
+            return ferramentas;
+        }
+    }
+    
+    public List buscarDisponiveis() {
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stm = null;
+        ResultSet rs = null;
+        List<Ferramenta> ferramentas = new ArrayList<>();
+        Ferramenta ferramenta = null;
+        try {
+            stm = con.prepareStatement("SELECT * FROM Ferramenta WHERE disponibilidade = TRUE");
             rs = stm.executeQuery();
             while (rs.next()) {
                 ferramenta = new Ferramenta();

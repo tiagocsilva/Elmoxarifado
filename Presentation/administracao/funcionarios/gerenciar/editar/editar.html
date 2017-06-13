@@ -1,0 +1,42 @@
+<div class="usuarios-control">
+
+  <h1 class="page-title"><i class="fa fa-plus" aria-hidden="true"></i> Editar Usuário</h1>
+  
+  <form name="frmNovoUsuario">
+
+  <div class="control">   
+    <div class="control-left">
+        Nome*:
+    </div>
+    <div class="control-right">
+        <input type="text" placeholder="ex: João da Silva" class="input-control" ng-model="usuario.nome" required>
+    </div>
+  </div>  
+
+  <div class="control"> 
+    <div class="control-left">
+        Ramal*:
+    </div>
+    <div class="control-right">
+        <input type="text" placeholder="9999" class="input-control" ng-model="usuario.ramal" required>
+    </div>
+  </div>
+
+  <div class="control"> 
+    <div class="control-left">
+        Setor*:
+    </div>
+    <div class="control-right">
+        <input type="text" placeholder="SET" class="input-control" ng-model="usuario.setor" required>
+    </div>
+  </div>
+ 
+  <div class="control-form-button">
+      <a href="#!/administracao"><button><span><i class="fa fa-ban" aria-hidden="true"></i>Cancelar</span></button></a>
+     
+     <button ng-click="resetarSenha()"><span><i class="fa fa-repeat" aria-hidden="true"></i> Resetar Senha</span></button>
+     <button ng-click="salvar()"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</span></button>
+  </div>
+</form>
+
+</div>

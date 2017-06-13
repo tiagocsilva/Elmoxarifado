@@ -1,0 +1,81 @@
+<div class="usuarios-control">
+
+  <h1 class="page-title"><i class="fa fa-plus" aria-hidden="true"></i> Novo Funcionario</h1>
+  
+  <form name="frmNovoUsuario">
+
+  <div class="control">   
+    <div class="control-left">
+        Nome*:
+    </div>
+    <div class="control-right">
+        <input type="text" placeholder="ex: João da Silva" class="input-control" ng-model="nome" required>
+    </div>
+  </div>
+
+  <div class="control"> 
+    <div class="control-left">
+        Matrícula*:
+    </div>
+    <div class="control-right">
+        <input type="text" placeholder="999999" class="input-control" ng-model="matricula" required>
+    </div>
+  </div>
+
+  <div class="control"> 
+    <div class="control-left">
+        Ramal*:
+    </div>
+    <div class="control-right">
+        <input type="text" placeholder="9999" class="input-control" ng-model="ramal" required>
+    </div>
+  </div>
+
+  <div class="control"> 
+    <div class="control-left">
+        Setor*:
+    </div>
+    <div class="control-right">
+        <input type="text" placeholder="SET" class="input-control" ng-model="setor" required>
+    </div>
+  </div>
+
+  <div class="control"> 
+    <div class="control-left">
+        Email*:
+    </div>
+    <div class="control-right">
+        <input type="text" placeholder="example@example.com" class="input-control" ng-model="email" required>
+    </div>
+  </div>
+
+   <div class="control"> 
+    <div class="control-left">
+        Usuário*:
+    </div>
+    <div class="control-right">
+        <input type="text" placeholder="JAO20" class="input-control" ng-model="usuario" required>
+    </div>
+  </div>
+
+   <!--<div class="control"> 
+    <div class="control-left">
+        Gerente?*:
+    </div>
+    <div class="control-right switch-main">
+       <label class="switch">  
+        <input type="checkbox" ng-model="isGererente">
+        <div class="slider round"></div>
+      </label>
+    </div>
+  </div>-->
+
+  <div class="control-form-button">
+      <a href="#!/administracao"><button><span><i class="fa fa-ban" aria-hidden="true"></i>Cancelar</span></button></a>
+
+     <button ng-click="salvar()"><span><i class="fa fa-floppy-o" aria-hidden="true"></i> Salvar</span></button>
+  </div>
+</form>
+
+</div>
+
